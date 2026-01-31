@@ -1,0 +1,23 @@
+/* Industries */
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.industry-tag {
+    background: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-left: 4px solid var(--accent);
+    transition: all 0.3s;
+}
+
+.industry-tag:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateX(5px);
+}

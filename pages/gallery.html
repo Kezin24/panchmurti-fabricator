@@ -1,0 +1,131 @@
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>Showcasing our expertise through completed projects and installations</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterGallery('piping')">Piping Works</button>
+                <button class="filter-btn" onclick="filterGallery('structural')">Structural Fabrication</button>
+                <button class="filter-btn" onclick="filterGallery('equipment')">Equipment Fabrication</button>
+                <button class="filter-btn" onclick="filterGallery('maintenance')">Maintenance & Services</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Piping Works -->
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(0)">
+                    <div class="gallery-image">🔧</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Process Piping Installation</h3>
+                        <p>SS piping system for chemical processing plant</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(1)">
+                    <div class="gallery-image">⚙️</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Underground Pipeline Network</h3>
+                        <p>Firewater and utility piping installation</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(2)">
+                    <div class="gallery-image">🏭</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Cooling Water System</h3>
+                        <p>Plant-wide cooling water piping and pipe racks</p>
+                    </div>
+                </div>
+
+                <!-- Structural Fabrication -->
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(3)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🏗️</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Industrial Platform Structure</h3>
+                        <p>Multi-level platform with staircases and ladders</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(4)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🔩</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Steel Structure Erection</h3>
+                        <p>Heavy girders and column installation</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(5)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🏢</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Conveyor Support Structure</h3>
+                        <p>Fabrication and erection of conveyor framework</p>
+                    </div>
+                </div>
+
+                <!-- Equipment Fabrication -->
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(6)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">⚗️</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Storage Tank Fabrication</h3>
+                        <p>MS/SS storage tanks for chemical storage</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(7)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">🏭</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Reactor Installation</h3>
+                        <p>Process reactor fabrication and erection</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(8)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">🔧</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Pressure Vessel Fabrication</h3>
+                        <p>ASME standard pressure vessel manufacturing</p>
+                    </div>
+                </div>
+
+                <!-- Maintenance & Services -->
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(9)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">🔨</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Plant Shutdown Work</h3>
+                        <p>Annual maintenance and inspection activities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(10)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">🎨</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Industrial Blasting & Painting</h3>
+                        <p>Surface preparation and protective coating</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(11)">
+                    <div class="gallery-image" style="background: linear-gradient(135degree, #a1c4fd 0%, #c2e9fb 100%);">🛠️</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Scaffolding Installation</h3>
+                        <p>Industrial scaffolding for maintenance access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

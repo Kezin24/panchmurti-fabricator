@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panchmurti Fabricator - Engineering & Fabrication Solutions for Industrial Facilities</title>
+    <meta name="description" content="Panchmurti Fabricator provides fabrication, erection, and industrial maintenance services to process and manufacturing industries across India since 2008.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5490;
+            --primary-dark: #0f3a5f;
+            --accent: #e67e22;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --border: #dee2e6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            z-index: 1001;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-main {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-main li {
+            display: inline-block;
+        }
+
+        .nav-main a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-main a:hover,
+        .nav-main a.active {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-more {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            margin: 3px 0;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .menu-panel {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            background: white;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            padding: 5rem 2rem 2rem;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s;
+            z-index: 1000;
+        }
+
+        .menu-panel.active {
+            right: 0;
+        }
+
+        .menu-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-panel li {
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .menu-panel a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .menu-panel a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 968px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .nav-main {
+                gap: 1rem;
+            }
+
+            .nav-main a {
+                font-size: 0.9rem;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 0.95rem;
+            }
+
+            .nav-main {
+                gap: 0.75rem;
+            }
+
+            .nav-main a {
+                font-size: 0.85rem;
+            }
+
+            .nav-right {
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .logo-text {
+                display: none;
+            }
+
+            .nav-main {
+                gap: 0.5rem;
+            }
+
+            .nav-main a {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Why Choose Us */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            background: var(--primary);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.8rem;
+        }
+
+        .feature h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        /* Industries */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .industry-tag {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .industry-tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Clients Section */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .client-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .client-card:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* Client Logos Section */
+        .client-logos-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .client-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .client-logo-item {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .client-logo-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .client-logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            background: var(--bg-light);
+        }
+
+        .case-study {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .case-study h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .case-study-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .case-study-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Quality & Safety */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .quality-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+        }
+
+        .quality-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .contact-icon {
+            background: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+       .site-footer {
+            background: #111;
+            color: #ccc;
+            padding: 3rem 1.5rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-column h3,
+        .footer-column h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-column p {
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #c89b3c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .gallery-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .lightbox-prev {
+                left: 0.5rem;
+            }
+
+            .lightbox-next {
+                right: 0.5rem;
+            }
+
+            .client-logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+
+            .client-logo-item {
+                width: 120px;
+                height: 120px;
+                padding: 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .bg-light {
+            background: var(--bg-light);
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(26, 84, 144, 0.1) 49%, rgba(26, 84, 144, 0.1) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(26, 84, 144, 0.1) 49%, rgba(26, 84, 144, 0.1) 51%, transparent 52%);
+            background-size: 30px 30px;
+        }
+
+        .certificate-content {
+            padding: 1.5rem;
+        }
+
+        .certificate-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .certificate-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .certificate-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .view-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .certificate-card:hover .view-badge {
+            background: var(--accent);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            animation: slideIn 0.3s;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: white;
+            background: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-modal:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Gallery Section */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            animation: fadeIn 0.3s;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: slideIn 0.3s;
+        }
+
+        .lightbox-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            color: white;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 2.5rem;
+            color: white;
+            background: var(--accent);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-lightbox:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: var(--accent);
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+
+        .__cf_email__ {
+            pointer-events: none;   /* disables clicking */
+            cursor: default;        /* normal cursor, not hand */
+            text-decoration: none;  /* no underline */
+            color: #ffffff;         /* white text */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/Images/pf_logo_header.PNG" alt="Panchmurti Fabricator Logo">
+                <span class="logo-text">Panchmurti Fabricator</span>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-main">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-panel" id="menuPanel">
+            <ul>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#industries" onclick="closeMenu()">Industries</a></li>
+                <li><a href="#certificates" onclick="closeMenu()">Certificates</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; opacity: 0.95; letter-spacing: 2px;">PANCHMURTI FABRICATOR</div>
+            <h1>Engineering & Fabrication Solutions for Industrial Facilities</h1>
+            <p>Delivering reliable fabrication, erection, and industrial maintenance services to process and manufacturing industries across India since 2008. We are committed to delivering high-quality fabrication solutions with integrity, safety, and excellence, while striving to become a nationally recognized leader in fabrication engineering.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">16+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">26+</span>
+                    <span class="stat-label">Enterprise Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Completed Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Panchmurti Fabricator</h2>
+                <p>M/S Panchmurti Fabricator, established in 2008 and located in Ankleshwar, Gujarat, is a fabrication engineering company providing project execution and maintenance services for process plants, power plants, fertilizer units, chemical facilities, and petrochemical refineries</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Industry Experience</h3>
+                    <p>Over 16 years of proven expertise serving chemicals, petrochemicals, pharmaceuticals, and manufacturing sectors</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👷</div>
+                    <h3>Skilled Workforce</h3>
+                    <p>Experienced engineers, supervisors, safety officers, and trained technicians ensuring disciplined execution</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Operational Excellence</h3>
+                    <p>Proven capability in shutdown and time-critical projects with structured site execution and supervision</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Quality & Compliance</h3>
+                    <p>ISO, ASME, and AWS standards alignment with rigorous quality checks and safety protocols</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Manpower Mobilization</h3>
+                    <p>Ability to mobilize skilled workforce as per project requirements and timelines</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Client Relationships</h3>
+                    <p>Long-term, professional partnerships with reliable delivery aligned with client timelines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive fabrication and industrial engineering solutions for greenfield and brownfield projects. We deliver end-to-end solutions aligned with client specifications, safety requirements, and project timelines.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Piping Fabrication & Erection</h3>
+                    <ul>
+                        <li>CS, MS, SS, and GI piping systems</li>
+                        <li>Utility and process piping</li>
+                        <li>Underground and firewater networks</li>
+                        <li>Cooling water systems and pipe racks</li>
+                        <li>Unit-level and plant-wide installations</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Structural Fabrication</h3>
+                    <ul>
+                        <li>Columns, platforms, staircases</li>
+                        <li>Girders and trusses</li>
+                        <li>Conveyors and supports</li>
+                        <li>Plant infrastructure structures</li>
+                        <li>Custom steel structures</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Equipment Fabrication & Erection</h3>
+                    <ul>
+                        <li>Storage tanks (MS / SS)</li>
+                        <li>Chimneys and ducting systems</li>
+                        <li>Reactors, condensers, and blenders</li>
+                        <li>Pressure vessels (as per applicable standards)</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Industrial & Support Services</h3>
+                    <ul>
+                        <li>AHU erection</li>
+                        <li>Industrial sheeting and roofing</li>
+                        <li>Scaffolding erection & dismantling</li>
+                        <li>Maintenance & shutdown works</li>
+                        <li>Industrial blasting and painting</li>
+                        <li>Lathe machining services</li>
+                        <li>Crane rental services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Supporting diverse industrial sectors with specialized fabrication and maintenance expertise. Our experience spans both greenfield and brownfield projects, including operating plant environments.</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-tag">Chemicals & Petrochemicals</div>
+                <div class="industry-tag">Pharmaceuticals</div>
+                <div class="industry-tag">Oil & Gas</div>
+                <div class="industry-tag">Energy & Power</div>
+                <div class="industry-tag">Manufacturing</div>
+                <div class="industry-tag">Textiles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Safety -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quality, Safety & Compliance</h2>
+                <p>Our commitment to safety and quality is embedded in every project we undertake. We maintain a strong safety and compliance culture with emphasis on risk control, continuous workforce training, and improvement.</p>
+            </div>
+            <div class="quality-grid">
+                <div class="quality-card">
+                    <h3>Safety Practices</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Safety induction for all site personnel
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Regular toolbox talks and briefings
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Risk assessment & control measures
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Continuous workforce training
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Safe work practices emphasis
+                        </li>
+                    </ul>
+                </div>
+                <div class="quality-card">
+                    <h3>Quality Policy</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Continual improvement & employee training
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Total customer satisfaction
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Timely project delivery
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Reduced customer concerns
+                        </li>
+                    </ul>
+                </div>
+                <div class="quality-card">
+                    <h3>Quality Assurance</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Compliance with client specifications
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Compliance with applicable codes
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Inspection during fabrication & erection
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent); font-weight: bold;">✓</span>
+                            Quality checks at every stage
+                        </li>
+                    </ul>
+                </div>
+                <div class="quality-card">
+                    <h3>Certifications</h3>
+                    <div class="badge-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <span class="badge">GST Registered</span>
+                        <span class="badge">ESIC Compliant</span>
+                        <span class="badge">EPFO Registered</span>
+                        <span class="badge">MSME Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies" class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Completed Projects</h2>
+                <p>Delivering excellence across major industrial installations</p>
+            </div>
+            
+            <div class="case-study">
+                <h3>Asian Paints Ltd. - GIDC Ankleshwar</h3>
+                <div class="case-study-meta">
+                    <span>📍 GIDC Ankleshwar, Gujarat</span>
+                    <span>🏭 Paints & Coatings</span>
+                    <span>✅ Completed</span>
+                </div>
+                <p>Successfully completed comprehensive piping fabrication, structural work, and equipment installation for one of India's leading paint manufacturers. The project included process piping systems, structural platforms, and industrial equipment with strict adherence to quality standards and safety protocols.</p>
+            </div>
+
+            <div class="case-study">
+                <h3>Bhilosa Industries Pvt. Ltd. - Silvassa Facility</h3>
+                <div class="case-study-meta">
+                    <span>📍 Silvassa</span>
+                    <span>🏭 Chemicals</span>
+                    <span>✅ Completed</span>
+                </div>
+                <p>Delivered comprehensive fabrication and erection services including piping systems, structural components, and equipment installation. The project was completed on schedule with zero safety incidents, meeting all client specifications and industry standards.</p>
+            </div>
+
+            <div class="case-study">
+                <h3>Bectochem Organic - Ankleshwar Project</h3>
+                <div class="case-study-meta">
+                    <span>📍 Ankleshwar, Gujarat</span>
+                    <span>🏭 Organic Chemicals</span>
+                    <span>✅ Completed</span>
+                </div>
+                <p>Successfully executed piping fabrication, structural fabrication, and equipment erection work for chemical processing facility. The project included high-quality SS and MS fabrication work with rigorous quality checks and timely delivery ensuring minimal operational disruption.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Industry Leaders</h2>
+                <p>We're proud to serve leading organizations across India</p>
+            </div>
+            
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">Ongoing Projects</h3>
+            <div class="clients-grid">
+                <div class="client-card">Asian Paints Ltd.</div>
+                <div class="client-card">Lupin Ltd.</div>
+                <div class="client-card">Detox India Pvt. Ltd.</div>
+                <div class="client-card">Bhilosa Industries Pvt. Ltd.</div>
+                <div class="client-card">Zentiva Pvt. Ltd.</div>
+                <div class="client-card">Rana Engineering</div>
+                <div class="client-card">Sanathan Textiles Pvt. Ltd.</div>
+                <div class="client-card">Bectochem Organic</div>
+            </div>
+
+            <h3 style="color: var(--primary); margin: 3rem 0 1.5rem; font-size: 1.5rem;">Completed Projects</h3>
+            <div class="clients-grid">
+                <div class="client-card">Reliance Industries</div>
+                <div class="client-card">Star Oxochem Pvt. Ltd.</div>
+                <div class="client-card">Punj Lloyd Ltd.</div>
+                <div class="client-card">Luwa India Pvt. Ltd.</div>
+                <div class="client-card">UTC Fire & Security India Ltd.</div>
+                <div class="client-card">Meehit Infrastructure Pvt. Ltd.</div>
+                <div class="client-card">Apollo Tyres Ltd.</div>
+                <div class="client-card">Agnice Fire Ltd.</div>
+                <div class="client-card">Chem Process Systems Pvt. Ltd.</div>
+                <div class="client-card">Jubilant Life Sciences</div>
+                <div class="client-card">Gujarat Victory Forgings Pvt. Ltd.</div>
+                <div class="client-card">Ned Energy Ltd.</div>
+                <div class="client-card">M. Mech Engineers Pvt. Ltd.</div>
+                <div class="client-card">ATE Pvt. Ltd.</div>
+                <div class="client-card">Tema India Ltd.</div>
+                <div class="client-card">NTC Ltd.</div>
+                <div class="client-card">Isagro (Asia) Agrochemicals Pvt. Ltd.</div>
+                <div class="client-card">Avdhut Chemicals Pvt. Ltd.</div>
+            </div>
+
+            <!-- Client Logos Showcase -->
+            <div class="client-logos-section">
+                <h3 style="color: var(--primary); text-align: center; margin-bottom: 1rem; font-size: 1.5rem;">Our Prestigious Clients</h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Delivering excellence to industry leaders across sectors</p>
+                <div class="client-logos-grid">
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏭</div>
+                            Reliance
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+                            Asian Paints
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚕️</div>
+                            Lupin Ltd.
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚗</div>
+                            Apollo Tyres
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+                            Jubilant Life Sciences
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏗️</div>
+                            Punj Lloyd
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">💊</div>
+                            Zentiva
+                        </div>
+                    </div>
+                    <div class="client-logo-item">
+                        <div style="text-align: center; font-weight: 600; color: var(--primary);">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧪</div>
+                            Star Oxochem
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Gallery</h2>
+                <p>Showcasing our expertise through completed projects and installations</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterGallery('piping')">Piping Works</button>
+                <button class="filter-btn" onclick="filterGallery('structural')">Structural Fabrication</button>
+                <button class="filter-btn" onclick="filterGallery('equipment')">Equipment Fabrication</button>
+                <button class="filter-btn" onclick="filterGallery('maintenance')">Maintenance & Services</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Piping Works -->
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(0)">
+                    <div class="gallery-image">🔧</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Process Piping Installation</h3>
+                        <p>SS piping system for chemical processing plant</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(1)">
+                    <div class="gallery-image">⚙️</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Underground Pipeline Network</h3>
+                        <p>Firewater and utility piping installation</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="piping" onclick="openLightbox(2)">
+                    <div class="gallery-image">🏭</div>
+                    <span class="gallery-category">Piping Works</span>
+                    <div class="gallery-overlay">
+                        <h3>Cooling Water System</h3>
+                        <p>Plant-wide cooling water piping and pipe racks</p>
+                    </div>
+                </div>
+
+                <!-- Structural Fabrication -->
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(3)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🏗️</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Industrial Platform Structure</h3>
+                        <p>Multi-level platform with staircases and ladders</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(4)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🔩</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Steel Structure Erection</h3>
+                        <p>Heavy girders and column installation</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="structural" onclick="openLightbox(5)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🏢</div>
+                    <span class="gallery-category">Structural</span>
+                    <div class="gallery-overlay">
+                        <h3>Conveyor Support Structure</h3>
+                        <p>Fabrication and erection of conveyor framework</p>
+                    </div>
+                </div>
+
+                <!-- Equipment Fabrication -->
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(6)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">⚗️</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Storage Tank Fabrication</h3>
+                        <p>MS/SS storage tanks for chemical storage</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(7)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">🏭</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Reactor Installation</h3>
+                        <p>Process reactor fabrication and erection</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="equipment" onclick="openLightbox(8)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">🔧</div>
+                    <span class="gallery-category">Equipment</span>
+                    <div class="gallery-overlay">
+                        <h3>Pressure Vessel Fabrication</h3>
+                        <p>ASME standard pressure vessel manufacturing</p>
+                    </div>
+                </div>
+
+                <!-- Maintenance & Services -->
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(9)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);">🔨</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Plant Shutdown Work</h3>
+                        <p>Annual maintenance and inspection activities</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(10)">
+                    <div class="gallery-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">🎨</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Industrial Blasting & Painting</h3>
+                        <p>Surface preparation and protective coating</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="maintenance" onclick="openLightbox(11)">
+                    <div class="gallery-image" style="background: linear-gradient(135degree, #a1c4fd 0%, #c2e9fb 100%);">🛠️</div>
+                    <span class="gallery-category">Maintenance</span>
+                    <div class="gallery-overlay">
+                        <h3>Scaffolding Installation</h3>
+                        <p>Industrial scaffolding for maintenance access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+            <div class="lightbox-nav lightbox-prev" onclick="navigateGallery(-1)">‹</div>
+            <div class="lightbox-nav lightbox-next" onclick="navigateGallery(1)">›</div>
+            <div style="text-align: center; padding: 3rem;">
+                <div style="font-size: 8rem; margin-bottom: 2rem;">📸</div>
+                <h2 class="lightbox-caption" style="color: white; margin-bottom: 1rem;">Project Image Preview</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Actual project images will be displayed here</p>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; font-style: italic;">This is a placeholder. Upload actual project photos to display them.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certificates & Recognition</h2>
+                <p>Recognition and appreciation from our valued clients for successful project completion and quality work</p>
+            </div>
+
+            <div class="certificates-grid">
+                <div class="certificate-card" onclick="openModal('cert1')">
+                    <div class="certificate-image">
+                        🏆
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Project Completion Certificate</h3>
+                        <p>Appreciation for successful completion of piping fabrication and erection work</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Asian Paints Ltd.</span>
+                            <span>📅 2024</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openModal('cert2')">
+                    <div class="certificate-image">
+                        🎖️
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Quality Excellence Award</h3>
+                        <p>Recognition for maintaining highest quality standards in structural fabrication</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Reliance Industries</span>
+                            <span>📅 2024</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openModal('cert3')">
+                    <div class="certificate-image">
+                        ⭐
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Safety Excellence Certificate</h3>
+                        <p>Awarded for zero accident record and exemplary safety practices</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Lupin Ltd.</span>
+                            <span>📅 2023</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openModal('cert4')">
+                    <div class="certificate-image">
+                        🏅
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Timely Completion Award</h3>
+                        <p>Certificate of appreciation for on-time project delivery during plant shutdown</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Apollo Tyres Ltd.</span>
+                            <span>📅 2023</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openModal('cert5')">
+                    <div class="certificate-image">
+                        🎯
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Preferred Vendor Certificate</h3>
+                        <p>Recognition as preferred fabrication partner for consistent quality delivery</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Jubilant Life Sciences</span>
+                            <span>📅 2023</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openModal('cert6')">
+                    <div class="certificate-image">
+                        💼
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Technical Excellence Award</h3>
+                        <p>Appreciation for complex equipment fabrication and precision work</p>
+                        <div class="certificate-meta">
+                            <span>🏢 Punj Lloyd Ltd.</span>
+                            <span>📅 2022</span>
+                        </div>
+                        <span class="view-badge">View Certificate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Certificate View -->
+    <div id="certificateModal" class="modal" onclick="closeModal(event)">
+        <span class="close-modal" onclick="closeModal(event)">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div style="text-align: center; padding: 3rem;">
+                <div style="font-size: 5rem; margin-bottom: 2rem;">📜</div>
+                <h2 style="color: var(--primary); margin-bottom: 1rem;">Certificate Preview</h2>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Actual certificate images will be displayed here</p>
+                <p style="color: var(--text-light); font-size: 0.9rem; font-style: italic;">This is a placeholder. Upload actual certificate images to display them.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 style="color: white;">Get in Touch</h2>
+                <p style="color: rgba(255,255,255,0.9);">Let's discuss how we can support your fabrication and industrial engineering needs</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Plot No. L-5203/6, G.I.D.C.<br>Ankleshwar – 393002<br>Dist. Bharuch, Gujarat, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 9426142343<br>+91 8800963192<br>Available Mon-Sat, 9 AM - 6 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff96919990bf8f9e919c97928a8d8b96999e9d8d969c9e8b908dd19c9092">Panchmurti@gmail.com</a><br>We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Request a Quote</h3>
+                    <form action="https://formspree.io/f/mlgnvyln" method="POST" id="contactForm">
+                        <input type="hidden" name="_subject" value="New Quote Request - Panchmurti Fabricator">
+                        <input type="hidden" name="_cc" value="">
+                        <input type="hidden" name="_next" value="#contact">
+                        
+                        <div class="form-group">
+                            <label>Company Name *</label>
+                            <input type="text" name="company_name" required placeholder="Your company name">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Person *</label>
+                            <input type="text" name="contact_person" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required placeholder="your.email@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Required *</label>
+                            <select name="service_required" required>
+                                <option value="">Select a service</option>
+                                <option>Piping Fabrication & Erection</option>
+                                <option>Structural Fabrication</option>
+                                <option>Equipment Fabrication</option>
+                                <option>Industrial Maintenance</option>
+                                <option>Multiple Services</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Details</label>
+                            <textarea name="project_details" placeholder="Please describe your project requirements, timeline, and any specific technical specifications"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-column">
+            <h3>Panchmurti Fabricator</h3>
+            <p>
+                Your Trusted Fabrication Partner – Supporting industrial clients with reliable fabrication, engineering, and maintenance services backed by experience, technical capability, and disciplined execution.
+            </p>
+            <p style="margin-top: 0.8rem;">
+                Engineering & Fabrication Solutions for Industrial Facilities
+            </p>
+        </div>
+
+        <!-- Compliance Info -->
+        <div class="footer-column">
+            <h4>Compliance</h4>
+            <p>
+                MSME UAN: <strong>GJ06A0009691</strong><br>
+                GST Registered<br>
+                ESIC & EPFO Compliant
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Panchmurti Fabricator. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Hamburger menu toggle
+        function toggleMenu() {
+            const menuPanel = document.getElementById('menuPanel');
+            const hamburger = document.querySelector('.hamburger');
+            menuPanel.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menuPanel = document.getElementById('menuPanel');
+            const hamburger = document.querySelector('.hamburger');
+            menuPanel.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menuPanel = document.getElementById('menuPanel');
+            const hamburger = document.querySelector('.hamburger');
+            if (menuPanel.classList.contains('active') && 
+                !menuPanel.contains(e.target) && 
+                !hamburger.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // Update main nav links
+            document.querySelectorAll('.nav-main a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update menu panel links
+            document.querySelectorAll('.menu-panel a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission handler
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                // Let Formspree handle the submission
+                // Show success message after a delay
+                setTimeout(() => {
+                    alert('Thank you for your inquiry! We will contact you within 24 hours.');
+                }, 1000);
+            });
+        }
+
+        // Certificate modal functions
+        function openModal(certId) {
+            document.getElementById('certificateModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            document.getElementById('certificateModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Gallery filter functions
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox functions
+        let currentImageIndex = 0;
+        const galleryImages = document.querySelectorAll('.gallery-item');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateGallery(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeLightbox();
+            }
+            if (e.key === 'ArrowLeft') {
+                navigateGallery(-1);
+            }
+            if (e.key === 'ArrowRight') {
+                navigateGallery(1);
+            }
+        });
+    </script>
+</body>
+</html>

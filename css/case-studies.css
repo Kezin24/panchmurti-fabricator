@@ -1,0 +1,32 @@
+/* Case Studies */
+.case-studies {
+    background: var(--bg-light);
+}
+
+.case-study {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.case-study h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.case-study-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.case-study-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

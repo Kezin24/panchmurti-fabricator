@@ -1,0 +1,36 @@
+/* Quality & Safety */
+.quality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.quality-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+}
+
+.quality-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}

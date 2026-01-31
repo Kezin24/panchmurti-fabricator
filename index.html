@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panchmurti Fabricator - Engineering & Fabrication Solutions for Industrial Facilities</title>
+    <meta name="description" content="Panchmurti Fabricator provides fabrication, erection, and industrial maintenance services to process and manufacturing industries across India since 2008.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/industries.css">
+    <link rel="stylesheet" href="css/quality.css">
+    <link rel="stylesheet" href="css/case-studies.css">
+    <link rel="stylesheet" href="css/clients.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/certificates.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <div id="navigation-section"></div>
+
+    <!-- Hero Section -->
+    <div id="hero-section"></div>
+
+    <!-- Why Choose Us Section -->
+    <div id="why-choose-us-section"></div>
+
+    <!-- Services Section -->
+    <div id="services-section"></div>
+
+    <!-- Industries Section -->
+    <div id="industries-section"></div>
+
+    <!-- Quality & Safety Section -->
+    <div id="quality-safety-section"></div>
+
+    <!-- Case Studies Section -->
+    <div id="case-studies-section"></div>
+
+    <!-- Clients Section -->
+    <div id="clients-section"></div>
+
+    <!-- Gallery Section -->
+    <div id="gallery-section"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox-section"></div>
+
+    <!-- Certificates Section -->
+    <div id="certificates-section"></div>
+
+    <!-- Contact Section -->
+    <div id="contact-section"></div>
+
+    <!-- Footer Section -->
+    <div id="footer-section"></div>
+
+    <!-- JavaScript to load sections -->
+    <script>
+        // Function to load HTML sections
+        function loadSection(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading section:', error));
+        }
+
+        // Load all sections
+        loadSection('navigation-section', 'pages/navigation.html');
+        loadSection('hero-section', 'pages/home.html');
+        loadSection('why-choose-us-section', 'pages/why-choose-us.html');
+        loadSection('services-section', 'pages/services.html');
+        loadSection('industries-section', 'pages/industries.html');
+        loadSection('quality-safety-section', 'pages/quality-safety.html');
+        loadSection('case-studies-section', 'pages/case-studies.html');
+        loadSection('clients-section', 'pages/clients.html');
+        loadSection('gallery-section', 'pages/gallery.html');
+        loadSection('lightbox-section', 'pages/lightbox.html');
+        loadSection('certificates-section', 'pages/certificates.html');
+        loadSection('contact-section', 'pages/contact.html');
+        loadSection('footer-section', 'pages/footer.html');
+    </script>
+
+    <!-- Main JavaScript -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

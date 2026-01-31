@@ -1,0 +1,15 @@
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+            <div class="lightbox-nav lightbox-prev" onclick="navigateGallery(-1)">‹</div>
+            <div class="lightbox-nav lightbox-next" onclick="navigateGallery(1)">›</div>
+            <div style="text-align: center; padding: 3rem;">
+                <div style="font-size: 8rem; margin-bottom: 2rem;">📸</div>
+                <h2 class="lightbox-caption" style="color: white; margin-bottom: 1rem;">Project Image Preview</h2>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Actual project images will be displayed here</p>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; font-style: italic;">This is a placeholder. Upload actual project photos to display them.</p>
+            </div>
+        </div>
+    </div>
+
