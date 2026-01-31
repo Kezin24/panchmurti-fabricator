@@ -143,68 +143,92 @@ function closeMenu() {
             }
         });
 
-// Clients Carousel Functions
-let currentCarouselIndex = 0;
-let carouselInterval;
+// Clients Carousel - Continuous Smooth Scroll
+let carouselAnimationId;
+let carouselScrollPosition = 0;
+let isPaused = false;
+
+function initContinuousCarousel() {
+    const track = document.getElementById('clientsCarouselTrack');
+    if (!track) return;
+    
+    const cards = track.querySelectorAll('.client-card-carousel');
+    
+    // Clone all cards and append to create infinite loop
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+    
+    startContinuousScroll();
+}
+
+function startContinuousScroll() {
+    const track = document.getElementById('clientsCarouselTrack');
+    if (!track) return;
+    
+    const cards = track.querySelectorAll('.client-card-carousel');
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24; // 1.5rem gap
+    const itemWidth = cardWidth + gap;
+    const originalCardsCount = cards.length / 2; // Half are clones
+    const resetPoint = -(originalCardsCount * itemWidth);
+    
+    function animate() {
+        if (!isPaused) {
+            carouselScrollPosition -= 0.5; // Speed: lower = slower, higher = faster
+            
+            // Reset position for infinite loop
+            if (carouselScrollPosition <= resetPoint) {
+                carouselScrollPosition = 0;
+            }
+            
+            track.style.transform = `translateX(${carouselScrollPosition}px)`;
+        }
+        
+        carouselAnimationId = requestAnimationFrame(animate);
+    }
+    
+    animate();
+}
 
 function moveCarousel(direction) {
     const track = document.getElementById('clientsCarouselTrack');
     const cards = track.querySelectorAll('.client-card-carousel');
     const cardWidth = cards[0].offsetWidth;
-    const gap = 24; // 1.5rem gap
+    const gap = 24;
     const itemWidth = cardWidth + gap;
     
-    // Calculate visible cards based on screen width
-    const containerWidth = track.parentElement.offsetWidth;
-    let visibleCards = 5;
-    
-    if (window.innerWidth <= 1200) visibleCards = 4;
-    if (window.innerWidth <= 968) visibleCards = 3;
-    if (window.innerWidth <= 768) visibleCards = 2;
-    if (window.innerWidth <= 480) visibleCards = 1;
-    
-    const maxIndex = cards.length - visibleCards;
-    
-    currentCarouselIndex += direction;
-    
-    // Loop carousel
-    if (currentCarouselIndex < 0) {
-        currentCarouselIndex = maxIndex;
-    } else if (currentCarouselIndex > maxIndex) {
-        currentCarouselIndex = 0;
-    }
-    
-    const offset = -(currentCarouselIndex * itemWidth);
-    track.style.transform = `translateX(${offset}px)`;
-    
-    // Reset auto-scroll timer
-    clearInterval(carouselInterval);
-    startCarouselAutoScroll();
+    // Move by one card width
+    carouselScrollPosition -= direction * itemWidth;
 }
 
-function startCarouselAutoScroll() {
-    carouselInterval = setInterval(() => {
-        moveCarousel(1);
-    }, 3000); // Auto-scroll every 3 seconds
-}
-
-// Start auto-scroll when page loads
+// Initialize on page load
 window.addEventListener('load', () => {
     if (document.getElementById('clientsCarouselTrack')) {
-        startCarouselAutoScroll();
+        initContinuousCarousel();
     }
 });
 
-// Pause auto-scroll on hover
+// Pause/Resume on hover
 document.addEventListener('DOMContentLoaded', () => {
     const carouselWrapper = document.querySelector('.clients-carousel-wrapper');
     if (carouselWrapper) {
         carouselWrapper.addEventListener('mouseenter', () => {
-            clearInterval(carouselInterval);
+            isPaused = true;
         });
         
         carouselWrapper.addEventListener('mouseleave', () => {
-            startCarouselAutoScroll();
+            isPaused = false;
         });
+    }
+});
+
+// Stop animation when page is hidden (performance optimization)
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        cancelAnimationFrame(carouselAnimationId);
+    } else if (document.getElementById('clientsCarouselTrack')) {
+        startContinuousScroll();
     }
 });
