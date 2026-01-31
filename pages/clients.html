@@ -7,37 +7,221 @@
         </div>
         
         <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">Ongoing Projects</h3>
-        <div class="clients-grid">
-            <div class="client-card">Asian Paints Ltd.</div>
-            <div class="client-card">Lupin Ltd.</div>
-            <div class="client-card">Detox India Pvt. Ltd.</div>
-            <div class="client-card">Bhilosa Industries Pvt. Ltd.</div>
-            <div class="client-card">Zentiva Pvt. Ltd.</div>
-            <div class="client-card">Rana Engineering</div>
-            <div class="client-card">Sanathan Textiles Pvt. Ltd.</div>
-            <div class="client-card">Bectochem Organic</div>
-        </div>
+            <div class="clients-grid clients-grid-with-logos">
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/asian-paints.png" alt="Asian Paints Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">🎨</div>
+                    </div>
+                    <div class="client-name">Asian Paints Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/Lupin Limited.png" alt="Lupin Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">⚕️</div>
+                    </div>
+                    <div class="client-name">Lupin Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/detox.png" alt="Detox India Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">♻️</div>
+                    </div>
+                    <div class="client-name">Detox India Pvt. Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/bhilosa.png" alt="Bhilosa Industries Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">🏭</div>
+                    </div>
+                    <div class="client-name">Bhilosa Industries Pvt. Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/Zentiva.png" alt="Zentiva Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">💊</div>
+                    </div>
+                    <div class="client-name">Zentiva Pvt. Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/mnt/user-data/uploads/rana-engineering-logo.png" alt="Rana Engineering Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">🔧</div>
+                    </div>
+                    <div class="client-name">Rana Engineering</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/sanathan textiles.png" alt="Sanathan Textiles Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">🧵</div>
+                    </div>
+                    <div class="client-name">Sanathan Textiles Pvt. Ltd.</div>
+                </div>
+                <div class="client-card client-card-with-logo">
+                    <div class="client-logo-container">
+                        <img src="/images/Clients/Bectochem.png" alt="Bectochem Organic Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="client-logo-placeholder" style="display: none;">🧪</div>
+                    </div>
+                    <div class="client-name">Bectochem Organic</div>
+                </div>
+            </div>
 
         <h3 style="color: var(--primary); margin: 3rem 0 1.5rem; font-size: 1.5rem;">Completed Projects</h3>
-        <div class="clients-grid">
-            <div class="client-card">Reliance Industries</div>
-            <div class="client-card">Star Oxochem Pvt. Ltd.</div>
-            <div class="client-card">Punj Lloyd Ltd.</div>
-            <div class="client-card">Luwa India Pvt. Ltd.</div>
-            <div class="client-card">UTC Fire & Security India Ltd.</div>
-            <div class="client-card">Meehit Infrastructure Pvt. Ltd.</div>
-            <div class="client-card">Apollo Tyres Ltd.</div>
-            <div class="client-card">Agnice Fire Ltd.</div>
-            <div class="client-card">Chem Process Systems Pvt. Ltd.</div>
-            <div class="client-card">Jubilant Life Sciences</div>
-            <div class="client-card">Gujarat Victory Forgings Pvt. Ltd.</div>
-            <div class="client-card">Ned Energy Ltd.</div>
-            <div class="client-card">M. Mech Engineers Pvt. Ltd.</div>
-            <div class="client-card">ATE Pvt. Ltd.</div>
-            <div class="client-card">Tema India Ltd.</div>
-            <div class="client-card">NTC Ltd.</div>
-            <div class="client-card">Isagro (Asia) Agrochemicals Pvt. Ltd.</div>
-            <div class="client-card">Avdhut Chemicals Pvt. Ltd.</div>
+
+        <!-- Clients Carousel -->
+        <div class="clients-carousel-wrapper">
+            <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous clients">
+                <span>‹</span>
+            </button>
+            
+            <div class="clients-carousel-container">
+                <div class="clients-carousel-track" id="clientsCarouselTrack">
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/asian-paints.png" alt="Reliance Industries Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏭</div>
+                        </div>
+                        <div class="client-name">Reliance Industries</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/Staroxochem.png" alt="Star Oxochem Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🧪</div>
+                        </div>
+                        <div class="client-name">Star Oxochem Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/punj-lloyd.png" alt="Punj Lloyd Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏗️</div>
+                        </div>
+                        <div class="client-name">Punj Lloyd Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/Luwa.png" alt="Luwa India Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏭</div>
+                        </div>
+                        <div class="client-name">Luwa India Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/utc.png" alt="UTC Fire & Security India Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🔥</div>
+                        </div>
+                        <div class="client-name">UTC Fire & Security India Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/apollo_tyres_logo.svg" alt="Apollo Tyres Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🚗</div>
+                        </div>
+                        <div class="client-name">Apollo Tyres Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/agnice.png" alt="Agnice Fire Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🔥</div>
+                        </div>
+                        <div class="client-name">Agnice Fire Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/chem process.png" alt="Chem Process Systems Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🧪</div>
+                        </div>
+                        <div class="client-name">Chem Process Systems Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/jubilant.png" alt="Jubilant Life Sciences Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🔬</div>
+                        </div>
+                        <div class="client-name">Jubilant Life Sciences</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/Gujarat forging.png" alt="Gujarat Victory Forgings Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">⚙️</div>
+                        </div>
+                        <div class="client-name">Gujarat Victory Forgings Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/NED.png" alt="Ned Energy Ltd." class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">⚡</div>
+                        </div>
+                        <div class="client-name">Ned Energy Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/asian-paints.png" alt="Isagro (Asia) Agrochemicals Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🌾</div>
+                        </div>
+                        <div class="client-name">Isagro (Asia) Agrochemicals Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/Mec engineers.png" alt="M. Mech Engineers Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🔧</div>
+                        </div>
+                        <div class="client-name">M. Mech Engineers Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/ate.png" alt="ATE Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">⚙️</div>
+                        </div>
+                        <div class="client-name">ATE Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/tema.png" alt="Tema India Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏭</div>
+                        </div>
+                        <div class="client-name">Tema India Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/ntc.png" alt="NTC Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏭</div>
+                        </div>
+                        <div class="client-name">NTC Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/chem process.png" alt="Meehit Infrastructure Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🏗️</div>
+                        </div>
+                        <div class="client-name">Meehit Infrastructure Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="/images/Clients/Bectochem.png" alt="Avdhut Chemicals Pvt. Ltd. Logo" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🧪</div>
+                        </div>
+                        <div class="client-name">Avdhut Chemicals Pvt. Ltd.</div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="" alt="" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🌾</div>
+                        </div>
+                        <div class="client-name"></div>
+                    </div>
+                    <div class="client-card client-card-carousel">
+                        <div class="client-logo-container">
+                            <img src="" alt="" class="client-company-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div class="client-logo-placeholder" style="display: none;">🧪</div>
+                        </div>
+                        <div class="client-name"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Next clients">
+                <span>›</span>
+            </button>
         </div>
 
         <!-- Client Logos Showcase -->
