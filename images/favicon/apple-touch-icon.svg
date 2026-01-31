@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- Rounded rectangle for iOS -->
+  <rect width="180" height="180" rx="40" fill="#1a5490"/>
+  
+  <!-- Inner circle for design -->
+  <circle cx="90" cy="90" r="70" fill="none" stroke="#ffffff" stroke-width="4"/>
+  
+  <!-- "PF" text -->
+  <text x="90" y="115" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">PF</text>
+</svg>
