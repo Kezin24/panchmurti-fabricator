@@ -119,7 +119,7 @@
 .clients-carousel-track {
     display: flex;
     gap: 1.5rem;
-    transition: transform 0.5s ease-in-out;
+    /* No transition - using requestAnimationFrame for smooth continuous scroll */
 }
 
 .client-card-carousel {
