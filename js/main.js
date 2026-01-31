@@ -147,12 +147,28 @@ function closeMenu() {
 let carouselAnimationId;
 let carouselScrollPosition = 0;
 let isPaused = false;
+let carouselInitialized = false;
 
 function initContinuousCarousel() {
     const track = document.getElementById('clientsCarouselTrack');
-    if (!track) return;
+    if (!track) {
+        console.log('Carousel track not found, will retry...');
+        return false;
+    }
     
     const cards = track.querySelectorAll('.client-card-carousel');
+    if (cards.length === 0) {
+        console.log('No carousel cards found, will retry...');
+        return false;
+    }
+    
+    // Check if already initialized (prevent double initialization)
+    if (carouselInitialized) {
+        console.log('Carousel already initialized');
+        return true;
+    }
+    
+    console.log('Initializing carousel with', cards.length, 'cards');
     
     // Clone all cards and append to create infinite loop
     cards.forEach(card => {
@@ -160,7 +176,9 @@ function initContinuousCarousel() {
         track.appendChild(clone);
     });
     
+    carouselInitialized = true;
     startContinuousScroll();
+    return true;
 }
 
 function startContinuousScroll() {
@@ -168,6 +186,8 @@ function startContinuousScroll() {
     if (!track) return;
     
     const cards = track.querySelectorAll('.client-card-carousel');
+    if (cards.length === 0) return;
+    
     const cardWidth = cards[0].offsetWidth;
     const gap = 24; // 1.5rem gap
     const itemWidth = cardWidth + gap;
@@ -194,7 +214,11 @@ function startContinuousScroll() {
 
 function moveCarousel(direction) {
     const track = document.getElementById('clientsCarouselTrack');
+    if (!track) return;
+    
     const cards = track.querySelectorAll('.client-card-carousel');
+    if (cards.length === 0) return;
+    
     const cardWidth = cards[0].offsetWidth;
     const gap = 24;
     const itemWidth = cardWidth + gap;
@@ -203,25 +227,94 @@ function moveCarousel(direction) {
     carouselScrollPosition -= direction * itemWidth;
 }
 
-// Initialize on page load
-window.addEventListener('load', () => {
-    if (document.getElementById('clientsCarouselTrack')) {
-        initContinuousCarousel();
+// Try to initialize carousel multiple times until successful
+function tryInitCarousel(attempts = 0, maxAttempts = 50) {
+    if (attempts >= maxAttempts) {
+        console.log('Max carousel initialization attempts reached');
+        return;
+    }
+    
+    const success = initContinuousCarousel();
+    
+    if (!success) {
+        // Try again after a short delay
+        setTimeout(() => {
+            tryInitCarousel(attempts + 1, maxAttempts);
+        }, 100); // Try every 100ms (reduced from 200ms for faster initialization)
+    } else {
+        console.log('Carousel initialized successfully after', attempts, 'attempts');
+    }
+}
+
+// IMMEDIATE: Try to initialize as soon as this script loads
+console.log('Script loaded, attempting immediate carousel initialization...');
+tryInitCarousel();
+
+// Listen for custom event when clients section is loaded
+window.addEventListener('clientsSectionLoaded', () => {
+    console.log('clientsSectionLoaded event received, initializing carousel...');
+    if (!carouselInitialized) {
+        tryInitCarousel();
     }
 });
 
-// Pause/Resume on hover
+// Initialize on DOMContentLoaded (earlier than 'load')
 document.addEventListener('DOMContentLoaded', () => {
-    const carouselWrapper = document.querySelector('.clients-carousel-wrapper');
-    if (carouselWrapper) {
-        carouselWrapper.addEventListener('mouseenter', () => {
-            isPaused = true;
-        });
-        
-        carouselWrapper.addEventListener('mouseleave', () => {
-            isPaused = false;
-        });
+    console.log('DOM loaded, starting carousel initialization...');
+    if (!carouselInitialized) {
+        tryInitCarousel();
     }
+});
+
+// Also try on window.load as backup
+window.addEventListener('load', () => {
+    if (!carouselInitialized) {
+        console.log('Window loaded, trying carousel initialization...');
+        tryInitCarousel();
+    }
+});
+
+// ADDITIONAL: Set an interval to keep trying for the first 10 seconds
+let initIntervalCounter = 0;
+const initInterval = setInterval(() => {
+    initIntervalCounter++;
+    
+    if (carouselInitialized) {
+        console.log('Carousel initialized, stopping interval check');
+        clearInterval(initInterval);
+    } else if (initIntervalCounter < 100) { // Try for 10 seconds (100 * 100ms)
+        tryInitCarousel();
+    } else {
+        console.log('Carousel initialization interval timeout');
+        clearInterval(initInterval);
+    }
+}, 100);
+
+// Setup hover pause/resume
+document.addEventListener('DOMContentLoaded', () => {
+    // Use a mutation observer to detect when carousel is added to DOM
+    const observer = new MutationObserver((mutations) => {
+        const carouselWrapper = document.querySelector('.clients-carousel-wrapper');
+        if (carouselWrapper && !carouselWrapper.dataset.listenersAdded) {
+            carouselWrapper.dataset.listenersAdded = 'true';
+            
+            carouselWrapper.addEventListener('mouseenter', () => {
+                isPaused = true;
+            });
+            
+            carouselWrapper.addEventListener('mouseleave', () => {
+                isPaused = false;
+            });
+            
+            console.log('Carousel hover listeners added');
+        }
+    });
+    
+    // Start observing
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 });
 
 // Stop animation when page is hidden (performance optimization)

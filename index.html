@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panchmurti Fabricator - Engineering & Fabrication Solutions for Industrial Facilities</title>
     <meta name="description" content="Panchmurti Fabricator provides fabrication, erection, and industrial maintenance services to process and manufacturing industries across India since 2008.">
+    
     <!-- Favicon - Multiple formats for best compatibility -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.svg">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/navigation.css">
@@ -66,14 +67,14 @@
     <!-- Footer Section -->
     <div id="footer-section"></div>
 
-    <!-- JavaScript to load sections -->
     <script>
         // Function to load HTML sections
-        function loadSection(elementId, filePath) {
+        function loadSection(elementId, filePath, callback) {
             fetch(filePath)
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById(elementId).innerHTML = data;
+                    if (callback) callback();
                 })
                 .catch(error => console.error('Error loading section:', error));
         }
@@ -86,7 +87,14 @@
         loadSection('industries-section', 'pages/industries.html');
         loadSection('quality-safety-section', 'pages/quality-safety.html');
         loadSection('case-studies-section', 'pages/case-studies.html');
-        loadSection('clients-section', 'pages/clients.html');
+        
+        // Load clients section and trigger carousel initialization after it's loaded
+        loadSection('clients-section', 'pages/clients.html', () => {
+            console.log('Clients section loaded, triggering carousel initialization');
+            // Trigger a custom event that carousel can listen to
+            window.dispatchEvent(new CustomEvent('clientsSectionLoaded'));
+        });
+        
         loadSection('gallery-section', 'pages/gallery.html');
         loadSection('lightbox-section', 'pages/lightbox.html');
         loadSection('certificates-section', 'pages/certificates.html');
